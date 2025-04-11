@@ -31,8 +31,8 @@ export async function sendWelcomeEmail(user: ClientObj) {
     await client.send({
       from: "Your Pace schedule Tracker <noreply@SetterSearch.com>",
       to: user.email,
-      subject: `Welcome to Fitness Tracker, ${user.fullName}!`,
-      content: `Welcome to Fitness Tracker! Please verify your email by clicking the link below:
+      subject: `Welcome to Setter Search, ${user.fullName}!`,
+      content: `Welcome to Setter Seaerch! Please verify your email by clicking the link below:
       
       ${verificationLink}
       

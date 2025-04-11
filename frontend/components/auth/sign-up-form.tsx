@@ -56,7 +56,7 @@ export default function SignUpForm() {
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_SERVER}/clients`,
         {
-          firstName: data.fullName,
+          fullName: data.fullName,
           email: data.email,
           password: data.password,
         },
@@ -69,7 +69,7 @@ export default function SignUpForm() {
       );
 
       if (response.status === 201) {
-        router.push("/dashboard");
+        router.push("/chat");
       }
     } catch (error) {
       console.error("Registration failed:", error);
@@ -94,7 +94,7 @@ export default function SignUpForm() {
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="space-y-2">
-          <label htmlFor="name" className="text-sm font-medium">
+          <label htmlFor="Fullname" className="text-sm font-medium">
             Full Name
           </label>
           <Input
