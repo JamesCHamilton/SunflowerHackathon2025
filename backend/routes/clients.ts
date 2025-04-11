@@ -2,7 +2,7 @@
 import express from "npm:express";
 import { Request, Response } from "npm:express";
 import type { ClientDocument } from "../Database.ts";
-import { generateToken} from "../jwtMiddleware.ts"
+import { generateToken } from "../jwtMiddleWare.ts";
 import { baseSchema } from "../schemas/Client.ts";
 import bcryptjs from "npm:bcryptjs";
 import { Database } from "https://deno.land/x/mongo@v0.32.0/mod.ts";

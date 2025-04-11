@@ -60,61 +60,66 @@ interface Message {
 // Dữ liệu mẫu
 const platforms: Platform[] = [
   {
-    id: "facebook",
-    name: "Facebook",
+    id: "messages",
+    name: "messages",
     accounts: [
       {
         id: "fb-account-1",
-        name: "Trang chính thức",
-        avatar: "/placeholder.svg?height=40&width=40",
+        name: "Carmine",
+        avatar: "/Carmine.jpg",
         chats: [
           {
             id: "fb-chat-1",
             customer: {
               id: "customer-1",
-              name: "Nguyễn Văn A",
-              email: "nguyenvana@example.com",
+              name: "Carmine",
+              email: "cguida@pace.edu",
               phone: "0901234567",
-              address: "123 Đường ABC, Quận 1, TP.HCM",
-              notes: "Khách hàng thân thiết, thường mua sản phẩm cao cấp.",
+              address: "15 Beekman",
+              notes: "Linked Lists good 🚀",
               online: true,
             },
             messages: [
               {
                 sender: "customer",
-                content: "Xin chào, tôi muốn hỏi về sản phẩm mới của bạn",
+                content: "Hey I heard you needed help with your backend signin route",
                 timestamp: Date.now() - 3600000,
               },
               {
                 sender: "user",
-                content: "Chào bạn, chúng tôi vừa ra mắt dòng sản phẩm mới. Bạn quan tâm đến loại nào?",
+                content: "I don't know why the IDE is giving me an error for an import cassing that is spelled right :(",
                 timestamp: Date.now() - 3500000,
               },
               {
                 sender: "customer",
-                content: "Tôi quan tâm đến mẫu XYZ. Bạn có thể cho tôi biết giá không?",
+                content: "I'll check it out later after i finish my class",
                 timestamp: Date.now() - 3400000,
               },
+              {
+                sender: "user",
+                content: "Ok thanks!",
+                timestamp: Date.now() - 3300000,
+              }
             ],
           },
           {
             id: "fb-chat-2",
             customer: {
               id: "customer-2",
-              name: "Trần Thị B",
+              name: "Kyle",
               email: "tranthib@example.com",
               phone: "0909876543",
-              notes: "Khách hàng mới, cần tư vấn kỹ.",
+              notes: "IDK what to put here",
             },
             messages: [
               {
                 sender: "customer",
-                content: "Sản phẩm của bạn có ship đến Hà Nội không?",
+                content: "Can you do the thing using the thing with the thing?",
                 timestamp: Date.now() - 86400000,
               },
               {
                 sender: "user",
-                content: "Dạ có ạ, chúng tôi ship toàn quốc. Thời gian giao hàng từ 2-3 ngày.",
+                content: "*Does a backflip*",
                 timestamp: Date.now() - 85000000,
               },
             ],
@@ -123,19 +128,19 @@ const platforms: Platform[] = [
       },
       {
         id: "fb-account-2",
-        name: "Nhóm hỗ trợ",
+        name: "A guy",
         chats: [
           {
             id: "fb-chat-3",
             customer: {
               id: "customer-3",
-              name: "Lê Văn C",
+              name: "Anonymous",
               phone: "0912345678",
             },
             messages: [
               {
                 sender: "customer",
-                content: "Tôi cần hỗ trợ về đơn hàng #12345",
+                content: "Hello, is this Carmine's account?",
                 timestamp: Date.now() - 172800000,
               },
             ],
@@ -173,25 +178,25 @@ const platforms: Platform[] = [
     ],
   },
   {
-    id: "zalo",
-    name: "Zalo",
+    id: "facebook",
+    name: "FaceBook",
     accounts: [
       {
         id: "zalo-account-1",
-        name: "Zalo Business",
+        name: "Mi sueno",
         chats: [
           {
             id: "zalo-chat-1",
             customer: {
               id: "customer-5",
-              name: "Hoàng Văn E",
+              name: "Diablo",
               phone: "0987654321",
               address: "456 Đường XYZ, Quận 2, TP.HCM",
             },
             messages: [
               {
                 sender: "customer",
-                content: "Chào shop, tôi muốn đặt hàng",
+                content: "Que lo Que, ¿Sabes cómo hacer la tarea?",
                 timestamp: Date.now() - 432000000,
               },
             ],
@@ -309,7 +314,7 @@ export default function ChatDashboard() {
         return <Facebook size={size} />
       case "instagram":
         return <Instagram size={size} />
-      case "zalo":
+      case "messages":
         return <MessageCircle size={size} />
       default:
         return <MessageSquare size={size} />
@@ -551,7 +556,7 @@ export default function ChatDashboard() {
                   <input
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Nhập tin nhắn..."
+                    placeholder="Send a message..."
                     className="flex-1 h-10 rounded-md border border-gray-300 px-3 transition-all duration-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     disabled={isMessageSending}
                   />

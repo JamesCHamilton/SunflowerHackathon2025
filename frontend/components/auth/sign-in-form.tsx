@@ -2,12 +2,10 @@
 
 import type React from "react";
 
-import { useState } from "react";
 import Link from "next/link";
-import { Eye, EyeOff, Facebook, Github } from "lucide-react";
+import {Facebook, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import * as z from "zod";
@@ -44,7 +42,7 @@ export function SignInForm() {
             );
 
             if (response.status === 200) {
-                router.push("/dashboard");
+                router.push("/chat");
             }
         } catch (error) {
             console.error("Login failed:", error);

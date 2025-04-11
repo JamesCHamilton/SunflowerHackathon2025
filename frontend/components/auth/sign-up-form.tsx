@@ -69,7 +69,7 @@ export default function SignUpForm() {
       );
 
       if (response.status === 201) {
-        router.push("/chat");
+        router.push("/classes");
       }
     } catch (error) {
       console.error("Registration failed:", error);
